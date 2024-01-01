@@ -107,3 +107,20 @@ choiceBox.addEventListener("click", function(event) {
         wrongSound.play();
     } 
 });
+
+// function to save score and initial of the user
+function storeData() {
+
+    let initlias = sendInitials.value.toUpperCase();
+    
+    if(initlias !== ""){
+    
+    let storedHighscore = JSON.parse(localStorage.getItem('Highscore')) || [];
+    storedHighscore.push(`${initlias} - ${score}`);
+    localStorage.setItem('Highscore', JSON.stringify(storedHighscore));
+    window.location.href = "highscores.html";
+
+    } else {
+        feedback("Please put your initals.");
+    }
+}
