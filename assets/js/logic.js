@@ -76,3 +76,34 @@ function generateQuestion() {
         choiceBox.appendChild(buttonChoice);
     }
 }
+
+// choice button clicks to verify user's choice and show next question
+choiceBox.addEventListener("click", function(event) {
+
+    let button = event.target;
+
+    if(countdown === 0){
+        return;
+    };
+
+    let answer = questionList[questionNr].correctAnswer;
+    let correctAnsw = questionList[questionNr].choices[answer];
+    
+    if(button.textContent == correctAnsw){
+        score++;
+        questionNr++;
+        correctSound.play();
+        feedback("Correct!");
+
+        if (questionNr < questionList.length) {
+            generateQuestion();
+        } else {
+            endTime();
+        }
+
+    }else {
+        feedback("Wrong!");
+        countdown -= 5;
+        wrongSound.play();
+    } 
+});
