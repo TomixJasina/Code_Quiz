@@ -33,3 +33,9 @@ function orderList(data) {
         return scoreB - scoreA;
     });
 }
+
+// function to clear Highscore list
+function cleanList() {
+    localStorage.clear();
+    list.innerHTML=""; 
+}
