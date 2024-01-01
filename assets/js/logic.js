@@ -25,3 +25,39 @@ let countdown = 50;
 let intervalID;
 let questionNr = 0;
 let storedHighscore = [];
+
+// start button to initiate timer + first question appear
+function init() {
+    //start screen to hide
+    startScreen.classList.remove("start");
+    startScreen.classList.add("hide");
+    questionScreen.classList.remove("hide");
+    //start time
+    startTime();
+    timeReamining();
+    generateQuestion();
+}
+
+// function to start time counting
+function startTime() {
+    intervalID = setInterval(timeReamining, 1000);
+}
+
+// function to count down time
+function timeReamining() {
+    if(countdown >= 0) {
+    timer.textContent = countdown;
+    countdown--;
+    } else {
+        endTime();
+    }
+}
+
+// function to end game 
+function endTime() {
+    timer.textContent = 0;
+    clearInterval(intervalID);
+    questionScreen.classList.add("hide");
+    endScreen.classList.remove("hide");
+    scoreFinal.textContent = score;
+}
