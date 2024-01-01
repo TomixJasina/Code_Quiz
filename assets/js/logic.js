@@ -61,3 +61,18 @@ function endTime() {
     endScreen.classList.remove("hide");
     scoreFinal.textContent = score;
 }
+
+// function to show question
+function generateQuestion() {
+
+    let question = questionList[questionNr];
+    choiceBox.innerHTML = "";
+
+    document.querySelector("#question-title").textContent = question.title;
+
+    for(let i=0; i < question.choices.length; i++){
+        let buttonChoice =  document.createElement("button");
+        buttonChoice.textContent = question.choices[i];
+        choiceBox.appendChild(buttonChoice);
+    }
+}
