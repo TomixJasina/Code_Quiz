@@ -124,3 +124,14 @@ function storeData() {
         feedback("Please put your initals.");
     }
 }
+
+// function to inform user about correct or incorret answer and to put initilas
+function feedback(message) {
+
+    feedbackText.textContent = message;
+    feedbackText.classList.remove("hide");
+
+    setTimeout(function() {
+        feedbackText.classList.add("hide");
+    }, 1000);
+}
