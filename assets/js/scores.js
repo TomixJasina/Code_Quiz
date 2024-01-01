@@ -24,3 +24,12 @@ function getScore() {
 }
 
 getScore();
+
+// function to order score from top to bottom
+function orderList(data) {
+    data.sort((a, b) => {
+        const scoreA = parseInt(a.split(" - ")[1]);
+        const scoreB = parseInt(b.split(" - ")[1]);
+        return scoreB - scoreA;
+    });
+}
