@@ -19,7 +19,6 @@ git clone `https://github.com/TomixJasina/Code_Quiz`
 ## 3. Usage
 
 Link to live project: https://tomixjasina.github.io/Code_Quiz/index.html
-
 1. Go to the app in your web browser.
 2. Click "Start Quiz" button.
 3. Choose the right option for each question presented.
