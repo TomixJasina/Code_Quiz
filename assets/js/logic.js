@@ -95,17 +95,19 @@ choiceBox.addEventListener("click", function(event) {
         correctSound.play();
         feedback("Correct!");
 
-        if (questionNr < questionList.length) {
-            generateQuestion();
-        } else {
-            endTime();
-        }
-
-    }else {
-        feedback("Wrong!");
+    }else { 
+        questionNr++;
         countdown -= 5;
         wrongSound.play();
+        feedback("Wrong!");
     } 
+
+    if (questionNr < questionList.length) {
+        generateQuestion();
+    } else {
+        endTime();
+    }
+
 });
 
 // function to save score and initial of the user
